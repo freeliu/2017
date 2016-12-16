@@ -1,0 +1,12 @@
+File saves in WebStorm don¡¯t trigger the watcher
+When using the JetBrains WebStorm IDE, you may find that saving changed files does not trigger the watcher as you might expect. Try disabling the safe write option in the settings, which determines whether files are saved to a temporary location first before the originals are overwritten: uncheck File > Settings... > System Settings > Use "safe write" (save changes to a temporary file first).
+
+
+
+vue cli
+$ npm install -g vue-cli
+$ vue init webpack#1.0 my-project
+$ cd my-project
+$ npm install
+$ npm run dev
+npm install sass-loader node-sass --save-dev
