@@ -1,0 +1,10 @@
+﻿a.mac -g 无权限解决方式
+
+1. ls -l  查用户权限
+2. whoami 显示当前用户
+3. sudo chown userName file.tex  改权限
+4. npm outdated  查看有没有新包
+5. npm ls
+6. --save 更新 p.json
+7. npm prune 去除无用包
+8. npm config get prefix 
