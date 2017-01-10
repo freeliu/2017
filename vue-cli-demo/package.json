@@ -2,7 +2,7 @@
   "name": "vue-cli-demo",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "olive <olive@meishakeji.com>",
+  "author": "olive",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
