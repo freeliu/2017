@@ -1,0 +1,26 @@
+{
+  "name": "my-awesome-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeliu/public-companent.git"
+  },
+  "keywords": [
+    "companent"
+  ],
+  "author": "olive",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freeliu/public-companent/issues"
+  },
+  "homepage": "https://github.com/freeliu/public-companent#readme"
+}
