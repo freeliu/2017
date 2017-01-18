@@ -7,9 +7,9 @@ const router = new VueRouter({mode: 'history', routers: routers})
 /* eslint-disable no-new */
 new Vue({
   data: {},
-  created: function () {
+  created: function() {
   },
-  mounted: function () {
+  mounted: function() {
 
   },
   router: router

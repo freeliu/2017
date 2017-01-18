@@ -5,12 +5,12 @@
 </template>
 <style>
   body {
-    background-color: #ff0000;
+    background-color: #ff0000
   }
 </style>
 <script>
   export default{
-    data(){
+    data() {
       return {
         msg: 'hello vue'
       }
