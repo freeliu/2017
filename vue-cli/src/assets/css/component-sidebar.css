@@ -1,0 +1,291 @@
+.opacity-text {
+  opacity: 0.4; }
+
+.c-green {
+  color: #00d4d3; }
+
+a.c-green:hover {
+  color: #00c6c5;
+  text-decoration: underline; }
+
+.c-red {
+  color: #ff5e5e; }
+
+.c-green-darker {
+  color: #00c6c5; }
+
+.c-black-light {
+  color: #8d929a; }
+
+.c-black {
+  color: #515760; }
+
+.c-black-darker {
+  color: #32353a; }
+
+.ml-10 {
+  margin-left: 10px; }
+
+.pl-10 {
+  padding-left: 10px; }
+
+.ml-20 {
+  margin-left: 20px; }
+
+.ml-100 {
+  margin-left: 100px; }
+
+.ml-auto {
+  margin-left: auto; }
+
+.mt-5 {
+  margin-top: 5px; }
+
+.mt-10 {
+  margin-top: 10px; }
+
+.mt-20 {
+  margin-top: 20px; }
+
+.mt-30 {
+  margin-top: 30px; }
+
+.mt-50 {
+  margin-top: 50px; }
+
+.mb-20 {
+  margin-bottom: 20px; }
+
+.pt-30 {
+  padding-top: 30px; }
+
+.mr-20 {
+  margin-right: 20px; }
+
+.ml-30 {
+  margin-left: 30px; }
+
+.ml-50 {
+  margin-left: 50px; }
+
+.font-0 {
+  font-size: 0; }
+
+.font-12 {
+  font-size: 12px; }
+
+.font-14 {
+  font-size: 14px; }
+
+.font-16 {
+  font-size: 16px; }
+
+.float-right {
+  float: right; }
+
+.w-60 {
+  width: 60px; }
+
+.w-100 {
+  width: 100px; }
+
+.w-110 {
+  width: 110px; }
+
+.pt-20 {
+  padding-top: 20px; }
+
+.p-y-5 {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+.p-y-20 {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.pl-20 {
+  padding-left: 20px; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.border-bottom-0 {
+  border-bottom: 0 !important; }
+
+.border-top {
+  border-top: 1px solid #EAEAEA; }
+
+.m-x--20 {
+  margin-left: -20px;
+  margin-right: -20px; }
+
+.small-scroll-bar {
+  overflow-y: auto;
+  max-height: 100%; }
+  .small-scroll-bar::-webkit-scrollbar {
+    width: 4px; }
+  .small-scroll-bar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+  .small-scroll-bar::-webkit-scrollbar-thumb {
+    background-color: #00d4d3;
+    outline: 1px solid slategrey; }
+
+.flex {
+  display: flex; }
+
+.grow-1 {
+  width: 0;
+  flex-grow: 1; }
+
+.grow-2 {
+  width: 0;
+  flex-grow: 2; }
+
+.grow-3 {
+  width: 0;
+  flex-grow: 3; }
+
+.grow-4 {
+  width: 0;
+  flex-grow: 4; }
+
+.grow-5 {
+  width: 0;
+  flex-grow: 5; }
+
+.stretch {
+  align-items: stretch; }
+
+.flex-shrink-0 {
+  flex-shrink: 0; }
+
+.hidden {
+  display: none !important;
+  opacity: 0; }
+
+.w-100pc {
+  width: 100%; }
+
+.w-70pc {
+  width: 70%; }
+
+.w-65pc {
+  width: 65%; }
+
+.w-60pc {
+  width: 60%; }
+
+.w-30pc {
+  width: 30%; }
+
+.w-35pc {
+  width: 35%; }
+
+.w-40pc {
+  width: 40%; }
+
+.border-right {
+  border-right: 1px solid #EAEAEA; }
+
+.border-all {
+  border: 1px solid #EAEAEA; }
+
+.h-34 {
+  height: 34px; }
+
+.lh-34 {
+  line-height: 34px; }
+
+.text-center {
+  text-align: center;
+  justify-content: center; }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.c-orange {
+  color: #ff9812; }
+
+.bg-gray {
+  background-color: #f7f7f7; }
+
+.middle {
+  align-items: center; }
+
+.p-x-20 {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.w-780 {
+  width: 780px; }
+
+.flex-wrap {
+  flex-wrap: wrap; }
+
+.justify-content-flex-start {
+  justify-content: flex-start !important; }
+
+.sideBar {
+  margin-top: 20px;
+  width: 160px;
+  border: 1px solid #EAEAEA;
+  min-height: 100%;
+  background-color: #fff; }
+  .sideBar a, .sideBar a:visited {
+    color: #515760; }
+  .sideBar a:hover {
+    color: #00d4d3; }
+
+.menu > li {
+  margin-top: 10px;
+  padding-left: 30px;
+  height: 50px;
+  line-height: 50px; }
+  .menu > li.on {
+    border-left: 6px solid #00d4d3;
+    padding-left: 22px;
+    background-color: #fafafa; }
+    .menu > li.on .menu-sub {
+      display: block; }
+  .menu > li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center; }
+  .menu > li:hover {
+    background-color: #fafafa;
+    color: #00d4d3; }
+    .menu > li:hover .menu-sub {
+      display: block; }
+  .menu > li .menu-sub {
+    display: none; }
+    .menu > li .menu-sub li {
+      height: 44px;
+      background: url("../assets/img/bg-menu-sub.png") no-repeat;
+      background-size: contain; }
+      .menu > li .menu-sub li a {
+        position: relative;
+        left: 20px;
+        top: 18px;
+        align-items: baseline; }
+
+.menu-sub li:first-child {
+  height: 37px; }
+
+.menu-sub li:first-child a {
+  top: 11px; }
+
+.router-link-active {
+  color: #00d4d3 !important; }
+
+/*# sourceMappingURL=component-sidebar.css.map */

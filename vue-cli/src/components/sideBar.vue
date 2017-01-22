@@ -4,10 +4,20 @@
       <li :class="{'on':$route.path.indexOf('index')>-1}">
         <router-link to="index">首页</router-link>
       </li>
-      <li :class="{'on':$route.path.indexOf('login')>-1}">
-        <router-link to="login">登陆</router-link>
+      <li :class="{'on':$route.path.indexOf('pageA')>-1}">
+        <router-link to="pageA">页面A</router-link>
       </li>
-
+      <li :class="{'on':$route.path.indexOf('pageB')>-1}">
+        <router-link to="pageB-sub1">页面B</router-link>
+        <ul class="menu-sub">
+          <li>
+            <router-link to="pageB-sub1">页面B-1</router-link>
+          </li>
+          <li>
+            <router-link to="pageB-sub2">页面B-2</router-link>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 </template>
@@ -17,8 +27,8 @@
     props: [],
     data () {
       return {
-        item: '',
-        itemSub: '',
+        item: "",
+        itemSub: "",
       }
     },
     created(){
@@ -28,9 +38,9 @@
   }
 </script>
 
-<style lang="scss">
+<!--<style lang="scss">-->
 
-</style>
+<!--</style>-->
 
 
 

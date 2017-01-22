@@ -4,7 +4,7 @@
     <!--<link href="../assets/css/main.css">-->
     <side-bar item="" itemSub=""></side-bar>
     <div class="main ">
-      这是首页
+        这是pageA
     </div>
 
   </div>
@@ -13,12 +13,12 @@
 <script>
   import  sideBar from "../components/sideBar.vue";
   export default {
-    name: 'index',
+    name: 'basicCourse',
     data () {
       return {}
     },
     created (){
-
+//      this.init(); //在路由中搜索了
     },
     components: {
       sideBar

@@ -1,0 +1,79 @@
+@import "base";
+
+.sideBar {
+  //margin-top: 20px;
+  position: fixed;
+  width: 160px;
+  min-width: 140px;
+  @include border-gray-all;
+  //height: 100%;
+  min-height: 100%;
+  background-color: #fff;
+  border-top: 0;
+  a,a:visited{
+    color: $c-black;
+  }
+  a:hover{
+    color: $c-green;
+  }
+}
+
+.menu {
+  > li {
+    margin-top: 10px;
+    padding-left: 30px;
+    height: 50px;
+    line-height: 50px;
+    &.on {
+      border-left: 6px solid $c-green;
+      padding-left: 22px;
+      background-color: #fafafa;
+      .menu-sub {
+        display: block;
+      }
+    }
+    a{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover{
+      background-color: #fafafa;
+      color: $c-green;
+      .menu-sub {
+        display: block;
+      }
+    }
+    .menu-sub {
+      display: none;
+      li{
+        height: 44px;
+        background: url("../img/bg-menu-sub.png") no-repeat;
+        background-size: contain;
+        a {
+          position: relative;
+          left: 20px;
+          top: 18px;
+          align-items: baseline;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.menu-sub li:first-child {
+  height: 37px;
+}
+
+.menu-sub li:first-child a {
+  top: 11px;
+}
+
+.router-link-active ,.on> a{
+  color: #00d4d3 !important;
+}

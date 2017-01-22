@@ -1,0 +1,408 @@
+@import "base";
+@import "reset-default";
+@import "popup";
+@import "component-sidebar";
+@import "page-login";
+
+a {
+  color: $c-black;
+}
+
+body {
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  height: 100vh;
+  color: $c-black;
+  line-height: 1.42857143
+}
+
+.btn-green {
+  display: inline-block;
+  background-color: $c-green;
+  height: 34px;
+  line-height: 34px;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: center;
+  color: white;
+  &:hover {
+    background-color: $c-green-darker;
+  }
+}
+
+.btn-gray {
+  height: 34px;
+  background-color: #f7f7f7;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include border-gray-all;
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+.btn-gray-small {
+  display: inline-block;
+  background-color: $c-gray;
+  height: 26px;
+  line-height: 26px;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: center;
+  color: $c-black;
+  @include border-gray-all;
+  &:hover {
+    background-color: #ffffff;
+  }
+}
+
+.btn-gray-small-plain {
+  @extend .btn-gray-small;
+  background-color: #fff;
+  &.on {
+    color: $c-green;
+    background-color: #fff;
+    border-color: $c-green;
+  }
+}
+
+.btn-gray-lg-plain {
+  color: $c-black;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  text-align: center;
+  display: inline-block;
+  @include border-gray-all;
+}
+
+.btn-red-lg {
+  color: #fff;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  line-height: 40px;
+  background-color: $c-red;
+  //解决往下偏移1px问题
+  border: 1px solid $c-red;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-green-lg {
+  color: #fff;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  line-height: 40px;
+  background-color: $c-green;
+  //解决往下偏移1px问题
+  border: 1px solid $c-green;
+  text-align: center;
+  display: inline-block;
+}
+
+header {
+  height: 60px;
+  //width: 100vw;
+  background-color: #ffffff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid $c-border;
+  @include p-x(20);
+
+  > div {
+    @include v-middle;
+    height: 100%;
+    @include max-page-width;
+  }
+}
+
+#app {
+  @include max-page-width;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page {
+  display: flex;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: 100%;
+  min-height: 100%;
+
+}
+
+.main {
+  //margin-top: 20px;
+  margin-left: 160px;
+  width: calc(100% - 160px);
+  min-width: 800px;
+
+  height: 100%;
+  background-color: #fff;
+  .head {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include p-x(20);
+    @include border-gray-bottom;
+    h2 {
+      font-size: 16px;
+    }
+
+  }
+  .content {
+    @include p-x(20);
+    @include p-y(20);
+    min-height: 500px;
+  }
+}
+
+.panel {
+  //选前面有.panel的元素（这里表示除了第一个之外的所有）
+  ~ .panel {
+    margin-top: 20px;
+  }
+  @include border-gray-all;
+  .panel-head {
+    h3 {
+      font-size: 14px;
+    }
+    height: 50px;
+    background-color: #f7f7f7;
+    @include border-gray-bottom;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .panel-head-sub, .panel-head-sub-sub {
+    border-top: 1px solid $c-border;
+    //@extend .panel-head;
+    @include border-gray-bottom;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include p-x(20);
+    border-bottom: 0;
+    height: 60px;
+    background-color: #ffffff;
+  }
+  .panel-item:not(:last-child) {
+    @include border-gray-bottom
+  }
+
+  .panel-head {
+    > div {
+      @include p-x(10);
+    }
+  }
+  .panel-item {
+    display: flex;
+    //align-items: center;
+    label {
+      flex-shrink: 0;
+    }
+    > div {
+      @include p-x(10);
+      @include p-y(20);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .grade {
+    @include border-gray-all;
+    border-bottom: 0;
+    height: 30px;
+    line-height: 30px;
+  }
+  .desc {
+    @include border-gray-all;
+    margin-bottom: 20px;
+    > div {
+      padding: 10px;
+      &:not(:last-child) {
+        border-right: 1px solid $c-border;
+        @include p-x(10);
+      }
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+  }
+  .grade, .desc {
+    display: flex;
+    align-items: stretch;
+    margin-left: 40px;
+    margin-right: 20px;
+
+    > div {
+      width: 20%;
+      text-align: center;
+    }
+  }
+}
+
+.square-green {
+  width: 10px;
+  height: 10px;
+  margin-right: 12px;
+  display: inline-block;
+  background-color: $c-green;
+}
+
+.dialog-delete {
+  min-width: initial !important;
+  width: 340px;
+  height: 196px;
+  overflow: hidden;
+  position: fixed !important;
+  top: calc(40% - 98px);
+  left: calc(50% - 170px);
+  background-color: #fff;
+  text-align: center;
+  @include p-y(20);
+  @include p-x(20);
+  @include border-gray-all;
+  > img:first-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-sizing: content-box;
+    padding: 20px;
+    cursor: pointer;
+    &:hover {
+      //cursor: pointer;
+    }
+  }
+  h4 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    line-height: normal;
+  }
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.dialog {
+  overflow: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 1001;
+  .btn-close-dialog {
+    box-sizing: content-box;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.measureTypeTest {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  color: #32353a;
+}
+
+.align-self-flex-start {
+  align-self: flex-start;
+}
+
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
+.dialog > div:not(.mask) {
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-x: auto;
+  min-width: 550px;
+  background-color: #fff;
+  position: relative;
+  bottom: 50px;
+  padding-bottom: 30px;
+  .head {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include p-x(20);
+    background-color: #f7f7f7;
+  }
+  .body {
+    max-height: calc(90vh - 55px);
+    overflow-y: auto;
+    @include p-x(60);
+    select {
+      height: 34px;
+      @include border-gray-all;
+      padding-left: 10px;
+    }
+    label {
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+
+    input[type=text] {
+      height: 34px;
+      @include border-gray-all;
+      @include p-x(10);
+    }
+
+    .num-count {
+      position: absolute;
+      right: 10px;
+      color: $c-black-light;
+      z-index: 0;
+    }
+    .btn-wrap {
+      justify-content: center;
+    }
+  }
+}
+
+.panel-body {
+  min-height: 50px;
+}
+
+textarea {
+  resize: vertical;
+}

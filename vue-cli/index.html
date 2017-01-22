@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>vue-cli</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="format-detection" content="telephone=no"/>
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+  <meta name="description" content="">
+  <title>模板</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+<div id="app" v-cloak>
+  <header>
+    <div>
+      <img src="static/img/logo.png" class="ml-30" width="16"> <span class="ml-10 c-black-light font-16 ">olive·hello world</span>
+      <span class="ml-auto font-12">{{userName}}</span>
+      <router-link class="mr-20 ml-30 font-12 c-black" to="login">{{userName?'退出':''}}</router-link>
+    </div>
+  </header>
+  <!-- 路由出口 -->
+  <!-- 路由匹配到的组件将渲染在这里 -->
+  <!--<keep-alive include="componentName1,componentName2">-->
+    <router-view></router-view>
+  <!--</keep-alive>-->
+</div>
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+</body>
 </html>
