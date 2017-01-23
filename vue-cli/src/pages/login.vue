@@ -49,32 +49,15 @@
       login: function () {
         const self = this;
         self.isLogin = true;
-        let xhr = common.postJson(common.api.login, {
-          name: self.name,  //admin
-          passwd: self.pwd  //Evaluate2016
-        }, function (rsp) {
-          common.hideLoading();
-          self.isLogin = false;
-          if (rsp.code === 0) {
-            localStorage.setItem(common.localStorageKeys.userName, self.name);
-            self.$root.userName = self.name;
-            console.log(self.$router);
-            self.$router.back();
-          }
-          else {
-            common.popMsg(rsp.msg);
-          }
-        });
-        setTimeout(function () {
-          if (xhr.readyState < 4) {
-            common.showLoading();
-          }
-        }, 400)
+        localStorage.setItem(common.localStorageKeys.userName, self.name);
+        self.$root.userName = self.name;
+        document.cookie=`${common.cookieKeys.auth}=fdjkasdfjkads`
+        //todo 完善
+        self.$router.back();
       }
     },
     beforeRouteEnter: (to, from, next) => {
-         console.log(from);
-         next();
+      next();
     }
   }
 </script>

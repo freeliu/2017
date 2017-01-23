@@ -174,7 +174,7 @@ function ajax(url, data, type, callback) {
         localStorage.removeItem('auth');
         popMsg(jsonData.msg, function () {
           // window.location = _this.weChatAuthUrl;
-          vm.$router.push("login");
+          // vm.$router.push("login");
         }, 2000)
       }
       else {
@@ -207,6 +207,16 @@ function ajax(url, data, type, callback) {
  */
 function postJson(url, data, callback) {
   return ajax(url, data, 'post', callback);
+};
+
+/**
+ * @param  {String} url
+ * @param {Object|null} data
+ * @param {Function} callback
+ * @returns {XHR}
+ */
+function getJson(url, data, callback) {
+  return ajax(url, data, 'get', callback);
 };
 
 
@@ -325,6 +335,7 @@ export default {
   hideLoading,
   confirmDelete,
   postJson,
+  getJson,
   api,
   popMsg,
   showMsg,
