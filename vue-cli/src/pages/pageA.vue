@@ -1,21 +1,32 @@
 <template>
-  <div class="page page-index">
-    <!-- ：删除 智能提示用，-->
-    <!--<link href="../assets/css/main.css">-->
-    <side-bar item="" itemSub=""></side-bar>
-    <div class="main ">
+    <div class="page page-index  ">
+      <!-- ：删除 智能提示用，-->
+      <!--<link href="../assets/css/main.css">-->
+      <side-bar item="" itemSub=""></side-bar>
+      <div class="main ">
         这是pageA
-    </div>
 
-  </div>
+        <div id="demo">
+          <button v-on:click="show = !show">
+            Toggle
+          </button>
+          <transition name="fade">
+            <p v-if="show">hello</p>
+          </transition>
+        </div>
+      </div>
+
+    </div>
 </template>
 
 <script>
   import  sideBar from "../components/sideBar.vue";
   export default {
-    name: 'basicCourse',
+    name: 'pageA',
     data () {
-      return {}
+      return {
+        show: true
+      }
     },
     created (){
 //      this.init(); //在路由中搜索了
@@ -38,8 +49,14 @@
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<!--<style lang="scss" scoped>-->
+<!--Add "scoped" attribute to limit CSS to this component only -->
+<style lang="scss" scoped>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
 
-<!--</style>-->
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
+</style>
 

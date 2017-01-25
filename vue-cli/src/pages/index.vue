@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-index">
+  <div class="page page-index  ">
     <!-- ：删除 智能提示用，-->
     <!--<link href="../assets/css/main.css">-->
     <side-bar item="" itemSub=""></side-bar>

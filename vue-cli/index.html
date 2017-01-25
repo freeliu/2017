@@ -7,10 +7,19 @@
   <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 
   <meta name="description" content="">
+  <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
   <title>模板</title>
   <style>
     [v-cloak] {
       display: none;
+    }
+
+    .page {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
     }
   </style>
 
@@ -28,7 +37,15 @@
   <!-- 路由出口 -->
   <!-- 路由匹配到的组件将渲染在这里 -->
   <!--<keep-alive include="componentName1,componentName2">-->
-    <router-view></router-view>
+  <transition name="custom-classes-transition"
+              :enter-active-class="'animated ' + (isGoBack?'fadeIn':'slideInRight')"
+              :leave-active-class="'animated ' + (isGoBack?'slideOutRight':'fadeOut')">
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+
+  </transition>
+
   <!--</keep-alive>-->
 </div>
 <script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>

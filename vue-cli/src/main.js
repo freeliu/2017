@@ -24,13 +24,14 @@ Vue.use(VueRouter);
 window.vm = new Vue({
   data: {
     userName: "",
-
+    isGoBack: false,
+    lastHistoryKey: 0,
   },
   created() {
     if (!common.getCookie(common.cookieKeys.auth) && this.$route.name != "login") {
       this.$router.push("/login");
-    }else {
-      alert(this.$route.name)
+    } else {
+      // alert(this.$route.name)
     }
 
     //替换用户名
@@ -54,9 +55,21 @@ window.vm = new Vue({
 }).$mount("#app");
 
 vm.$router.beforeEach((to, from, next) => {
-
+  //监控页面返回
+  if(history&&history.state&&history.state.key)
+  {
+    if (history.state.key > vm.lastHistoryKey&&vm.lastHistoryKey>0) {
+      vm.isGoBack = false;
+    } else {
+      vm.isGoBack = true;
+    }
+    vm.lastHistoryKey = history.state.key || -1;
+  }
+  console.log(vm.isGoBack)
+  next();
 });
 vm.$router.afterEach(route => {
+
 
 })
 
