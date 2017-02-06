@@ -1,0 +1,9 @@
+@import "animate-slide";
+
+.page{
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  //结果iphone滚动不流畅问题
+  -webkit-overflow-scrolling:touch;
+}

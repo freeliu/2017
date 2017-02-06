@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2016/11/29
+ * Created by olive on 2016/11/29
  * 封装公共方法和属性
  */
 'use strict'

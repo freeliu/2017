@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,init-scale=1,user-scalable=0">
+  <title>vue-cli-mobile</title>
+</head>
+<body>
+<div id="app">
+  <transition
+    :enter-active-class="isGoBack?'weui-animate-fade-in':'slideIn'"
+    :leave-active-class="isGoBack?'slideOut':'weui-animate-fade-out'">
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+  </transition>
+</div>
+
+</body>
+</html>
