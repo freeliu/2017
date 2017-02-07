@@ -11,9 +11,10 @@ export default {
   name: 'page1',
   components: {
 
-  },created(){
-      document.title="page1"
   },
-};
+  created () {
+    document.title = 'page1'
+  }
+}
 </script>
 

@@ -10,9 +10,10 @@ export default {
   name: 'page2',
   components: {
 
-  },created(){
-      document.title="page2"
   },
-};
+  created () {
+    document.title = 'page2'
+  }
+}
 </script>
 
