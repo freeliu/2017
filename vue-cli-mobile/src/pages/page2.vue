@@ -6,14 +6,12 @@
 
 <script>
 
-export default {
-  name: 'page2',
-  components: {
-
-  },
-  created () {
-    document.title = 'page2'
+  export default {
+    name: 'page2',
+    components: {},
+    created () {
+      var $body = $('body');
+    }
   }
-}
 </script>
 
