@@ -1,66 +1,41 @@
-/**
- * Created by olive on 2017/01/25.
- * 这是程序入口
- */
+import 'weui'
+import './assets/css/main.scss'
+// import './assets/js/polyfill.js'
+import weUi from 'weui.js';
+import Vue from 'vue'
+import router from './router'
+import common from './assets/js/common.js'
 
-import 'weui';
-import './assets/css/main.scss';
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-// import globalFilters from './assets/js/global-filters.js';
-// import common from './assets/js/common.js';
-import weui from 'weui.js';
+//封装公共数据和方法
+window.common = common;
+window.weUi=weUi;
 
-window.weui=weui;
-
-// 注册全局过滤器
-// for (let key in globalFilters) {
-//   Vue.filter(key, globalFilters[key]);
-// }
-// 使用vue路由
-Vue.use(VueRouter);
-
-// 初始vue根实例
-window.vm = new Vue({
-  data: {
-    userName: '',
-    isGoBack: false,
-    lastHistoryKey: 0,
-  },
-  created() {
-    // 替换用户名
-    if (localStorage.getItem('userName')) {
-      this.userName = localStorage.getItem('userName');
+/* eslint-disable no-new */
+let vm = new Vue({
+  el: '#app',
+  data: {},
+  router,
+  created(){
+    let code = common.getUrlParam('code')
+    //如果有code的话就登录
+    if (code) {
+      common.postJson(common.api.login, {code}, function (res) {
+        if (res.code = common.api.responseCode.success) {
+          localStorage.setItem("auth", res.data.auth);
+        } else {
+          alert(res.msg);
+        }
+      })
     }
-  },
-  methods: {},
-  router: new VueRouter({
-    mode: 'history',
-    routes: [
-      {path: '/', redirect: '/index'},
-      {path: '/index', component: (resolve) => require(['./pages/index.vue'], resolve)},
-      {path: '/page1', component: (resolve) => require(['./pages/page1.vue'], resolve)},
-      {path: '/page2', component: (resolve) => require(['./pages/page2.vue'], resolve)},
-      {path: '*', redirect: '/index'},
-    ],
-  }),
-}).$mount('#app');
+  }
+})
 
 vm.$router.beforeEach((to, from, next) => {
-  // 监控页面返回
-  if (history && history.state && history.state.key) {
-    if (history.state.key > vm.lastHistoryKey) {
-      vm.isGoBack = false;
-    } else {
-      vm.isGoBack = true;
-    }
-    vm.lastHistoryKey = history.state.key || -1;
-  }
-  next();
-});
-vm.$router.afterEach((route) => {
-
-
+  next()
+})
+window.rootVm = vm;
+wx.ready(function () {
+  // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
 });
 
 
