@@ -1,4 +1,8 @@
 /**
+<<<<<<< HEAD
+ * Created by olive on 2017/2/7.
+ */
+=======
  * Created by olive on 2017/2/8.
  */
 
@@ -122,3 +126,4 @@ export default {
   getJson
 
 }
+>>>>>>> 181c66a6798b22504de3683c117f0c56b295b8ea
