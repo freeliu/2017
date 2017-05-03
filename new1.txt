@@ -1,0 +1,1 @@
+1.禁止输入小数点和减号 onkeypress="return [45,46].indexOf(event.keyCode)==-1"
